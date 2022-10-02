@@ -16,10 +16,12 @@ public class ExcelData {
 		FileInputStream stream= new FileInputStream(file);
 		Workbook workbook =new XSSFWorkbook(stream);
 		Sheet sheet = workbook.getSheet("Sheet1");
-//		Row row = sheet.getRow(1);		
+		Row row = sheet.getRow(1);	
+		Cell cell2 = row.getCell(1);
+		System.out.println(cell2);
 		for (int i = 0; i < sheet.getPhysicalNumberOfRows()  ; i++) {
-			Row row = sheet.getRow(i);
-			for (int j = 0; j <row.getPhysicalNumberOfCells(); j++) {
+			Row row1 = sheet.getRow(i);
+			for (int j = 0; j <row1.getPhysicalNumberOfCells(); j++) {
 				Cell cell = row.getCell(j);
 				System.out.println(cell);
 				
